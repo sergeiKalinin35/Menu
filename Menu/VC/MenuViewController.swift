@@ -16,7 +16,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     
     var menu = Menu()
-    
+    var selectedGroupIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,11 @@ class MenuViewController: UIViewController {
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
       
+        
+        self.groupsCollectionView.register(UINib(nibName: "GroupCell", bundle: nil), forCellWithReuseIdentifier: "GroupCell")
+        self.groupsCollectionView.dataSource = self
+        self.groupsCollectionView.delegate = self
+        
     }
     
 
@@ -36,26 +41,71 @@ class MenuViewController: UIViewController {
 extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return menu.products.count
+        
+        // ставим условие
+        if collectionView == groupsCollectionView {
+            return menu.groups.count
+        } else {
+            
+            let group = menu.groups[selectedGroupIndex]
+            return group.products.count
+        }
+        
     }
     
+    //MARK: - создаем ячейки
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+        if collectionView == groupsCollectionView {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupCell", for: indexPath) as! GroupCell
+            
+            let group = menu.groups[indexPath.item]
+            
+            cell.setupCell(group: group)
+             
+            return cell
+            
+        } else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
+            let group = menu.groups[indexPath.item]
+            let product = group.products[indexPath.item]
+            cell.setupCell(product: product)
+            
+            return cell
+            
+        }
+    }
+    
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let product = menu.products[indexPath.item]
-        cell.setupCell(product: product)
+        if collectionView == groupsCollectionView {
+            
+            let groupName = menu.groups[indexPath.item].name
+            let width = groupName.widthOfString(usingFont: UIFont.systemFont(ofSize: 17))
+            return CGSize(width: width + 20, height: collectionView.frame.height )
+            
+            
+            } else {
+            
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 400)
+        }
         
-        return cell
         
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 400)
-    }
     // отступы между ячейками
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 20
+    }
+    
+    // вверхняя коллекция вью
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -63,4 +113,23 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if collectionView == groupsCollectionView {
+            
+            self.selectedGroupIndex = indexPath.item
+            self.collectionView.reloadData()
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
 }
+
+
+
+
