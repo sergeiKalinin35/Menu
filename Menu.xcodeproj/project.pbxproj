@@ -13,6 +13,9 @@
 		F4F2033C26FE0B67005F0887 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F2033B26FE0B67005F0887 /* Assets.xcassets */; };
 		F4F2033F26FE0B67005F0887 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4F2033D26FE0B67005F0887 /* LaunchScreen.storyboard */; };
 		F4F2034726FE1D75005F0887 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2034626FE1D75005F0887 /* MenuViewController.swift */; };
+		F4F2034B26FE1FDB005F0887 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2034926FE1FDB005F0887 /* ProductCollectionViewCell.swift */; };
+		F4F2034C26FE1FDB005F0887 /* ProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4F2034A26FE1FDB005F0887 /* ProductCollectionViewCell.xib */; };
+		F4F2034E26FE2319005F0887 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F2034D26FE2319005F0887 /* Menu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		F4F2033E26FE0B67005F0887 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F4F2034026FE0B67005F0887 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4F2034626FE1D75005F0887 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		F4F2034926FE1FDB005F0887 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		F4F2034A26FE1FDB005F0887 /* ProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		F4F2034D26FE2319005F0887 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		F4F2033126FE0B64005F0887 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				F4F2033226FE0B64005F0887 /* AppDelegate.swift */,
-				F4F2033426FE0B64005F0887 /* SceneDelegate.swift */,
-				F4F2033826FE0B64005F0887 /* Main.storyboard */,
-				F4F2034626FE1D75005F0887 /* MenuViewController.swift */,
-				F4F2033B26FE0B67005F0887 /* Assets.xcassets */,
-				F4F2033D26FE0B67005F0887 /* LaunchScreen.storyboard */,
+				F4F2035426FE2597005F0887 /* VC */,
+				F4F2034F26FE24D4005F0887 /* Model */,
+				F4F2035126FE2503005F0887 /* StoryBoard */,
+				F4F2035026FE24E7005F0887 /* Service */,
 				F4F2034026FE0B67005F0887 /* Info.plist */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		F4F2034826FE1F73005F0887 /* MenuCells */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2034926FE1FDB005F0887 /* ProductCollectionViewCell.swift */,
+				F4F2034A26FE1FDB005F0887 /* ProductCollectionViewCell.xib */,
+			);
+			path = MenuCells;
+			sourceTree = "<group>";
+		};
+		F4F2034F26FE24D4005F0887 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2034D26FE2319005F0887 /* Menu.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4F2035026FE24E7005F0887 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2033426FE0B64005F0887 /* SceneDelegate.swift */,
+				F4F2033226FE0B64005F0887 /* AppDelegate.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F4F2035126FE2503005F0887 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2033826FE0B64005F0887 /* Main.storyboard */,
+				F4F2033B26FE0B67005F0887 /* Assets.xcassets */,
+				F4F2033D26FE0B67005F0887 /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		F4F2035426FE2597005F0887 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				F4F2034626FE1D75005F0887 /* MenuViewController.swift */,
+				F4F2034826FE1F73005F0887 /* MenuCells */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +175,7 @@
 			files = (
 				F4F2033F26FE0B67005F0887 /* LaunchScreen.storyboard in Resources */,
 				F4F2033C26FE0B67005F0887 /* Assets.xcassets in Resources */,
+				F4F2034C26FE1FDB005F0887 /* ProductCollectionViewCell.xib in Resources */,
 				F4F2033A26FE0B64005F0887 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,7 +189,9 @@
 			files = (
 				F4F2033326FE0B64005F0887 /* AppDelegate.swift in Sources */,
 				F4F2033526FE0B64005F0887 /* SceneDelegate.swift in Sources */,
+				F4F2034B26FE1FDB005F0887 /* ProductCollectionViewCell.swift in Sources */,
 				F4F2034726FE1D75005F0887 /* MenuViewController.swift in Sources */,
+				F4F2034E26FE2319005F0887 /* Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
