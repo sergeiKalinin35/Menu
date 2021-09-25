@@ -10,8 +10,10 @@ import UIKit
 
 
 struct Group {
+    var groups: [Group]?
     var name: String
-    var products: [Product]
+    var products: [Product]?
+    var image: UIImage
     
 }
 
@@ -36,38 +38,79 @@ class Menu {
     }
     func setup() {
         
-        let p1 = Product(name: "Pizza.1", price: 650, image: UIImage(named: "p1")!)
-        let p2 = Product(name: "Pizza.2", price: 750, image: UIImage(named: "p1")!)
-        let p3 = Product(name: "Pizza.", price: 700, image: UIImage(named: "p1")!)
-        
-        let p4 = Product(name: "Burger.1", price: 410, image: UIImage(named: "p2")!)
-        let p5 = Product(name: "Burger.2", price: 450, image: UIImage(named: "p2")!)
-        let p6 = Product(name: "Burger.3", price: 400, image: UIImage(named: "p2")!)
+//MARK: - Pizza
         
         
-        let p7 = Product(name: "Cheeseburger.1", price: 150, image: UIImage(named: "p3")!)
-        let p8 = Product(name: "Cheeseburger.2", price: 250, image: UIImage(named: "p3")!)
-        let p9 = Product(name: "Cheeseburger.3", price: 300, image: UIImage(named: "p3")!)
+        let p1 = Product(name: "Pizza.1", price: 300, image: UIImage(named: "p1")!)
+        let p2 = Product(name: "Pizza.2", price: 300, image: UIImage(named: "p1")!)
+        let p3 = Product(name: "Pizza.3", price: 300, image: UIImage(named: "p1")!)
+        
+        let p4 = Product(name: "Pizza.4", price: 400, image: UIImage(named: "p1")!)
+        let p5 = Product(name: "Pizza.5", price: 400, image: UIImage(named: "p1")!)
+        let p6 = Product(name: "Pizza.6", price: 400, image: UIImage(named: "p1")!)
+        
+        let p7 = Product(name: "Pizza.7", price: 500, image: UIImage(named: "p1")!)
+        let p8 = Product(name: "Pizza.8", price: 500, image: UIImage(named: "p1")!)
+        let p9 = Product(name: "Pizza.9", price: 500, image: UIImage(named: "p1")!)
+        
+        let pizzaGroupIn1 = Group(groups: nil, name: "Pizza 25cm", products: [p1, p2, p3], image: UIImage(named: "p1")!)
+        let pizzaGroupIn2 = Group(groups: nil, name: "Pizza 30cm", products: [p4, p5, p6], image: UIImage(named: "p1")!)
+        let pizzaGroupIn3 = Group(groups: nil, name: "Pizza 35cm", products: [p7, p8, p9], image: UIImage(named: "p1")!)
+        
+        
+        let pizzaGroup = Group(groups: [pizzaGroupIn1, pizzaGroupIn2, pizzaGroupIn3], name: "PIZZA", products: nil, image: UIImage(named: "p1")!)
         
         
         
+ //MARK: - Burger
         
-        let products1 = [p1, p2, p3]
-        let products2 = [p4, p5, p6]
-        let products3 = [p7, p8, p9]
+        let b1 = Product(name: "Burger.1", price: 100, image: UIImage(named: "p2")!)
+        let b2 = Product(name: "Burger.2", price: 100, image: UIImage(named: "p2")!)
+        let b3 = Product(name: "Burger.3", price: 100, image: UIImage(named: "p2")!)
         
-        let g1 = Group(name: "Pizza.1", products: products1)
-        let g2 = Group(name: "Burger.1", products: products2)
-        let g3 = Group(name: "Cheeseburger.1", products: products3)
-        let g4 = Group(name: "Pizza.2", products: products1)
-        let g5 = Group(name: "Burger.2", products: products2)
-        let g6 = Group(name: "Cheeseburger.2", products: products3)
+        let b4 = Product(name: "Burger.4", price: 200, image: UIImage(named: "p2")!)
+        let b5 = Product(name: "Burger.5", price: 200, image: UIImage(named: "p2")!)
+        let b6 = Product(name: "Burger.6", price: 200, image: UIImage(named: "p2")!)
         
-        // помещаем в массив groups
+        let b7 = Product(name: "Burger.7", price: 300, image: UIImage(named: "p2")!)
+        let b8 = Product(name: "Burger.8", price: 300, image: UIImage(named: "p2")!)
+        let b9 = Product(name: "Burger.9", price: 300, image: UIImage(named: "p2")!)
         
-        self.groups = [g1, g2, g3, g4, g5, g6]
+        let burgerGroupIn1 = Group(groups: nil, name: "Burger Bronze", products: [b1, b2, b3], image: UIImage(named: "p2")!)
+        let burgerGroupIn2 = Group(groups: nil, name: "Burger Silver", products: [b4, b5, b6], image: UIImage(named: "p2")!)
+        let burgerGroupIn3 = Group(groups: nil, name: "Burger Gold", products: [b7, b8, b9], image: UIImage(named: "p2")!)
         
-      
+        
+        let burgerGroup = Group(groups: [burgerGroupIn1, burgerGroupIn2, burgerGroupIn3], name: "BURGER", products: nil, image: UIImage(named: "p2")!)
+        
+        
+        
+        //MARK: - Cheeseburger
+        
+        let c1 = Product(name: "Cheeseburger.1", price: 100, image: UIImage(named: "p3")!)
+        let c2 = Product(name: "Cheeseburger.2", price: 100, image: UIImage(named: "p3")!)
+        let c3 = Product(name: "Cheeseburger.3", price: 100, image: UIImage(named: "p3")!)
+        
+        let c4 = Product(name: "Cheeseburger.4", price: 200, image: UIImage(named: "p3")!)
+        let c5 = Product(name: "Cheeseburger.5", price: 200, image: UIImage(named: "p3")!)
+        let c6 = Product(name: "Cheeseburger.6", price: 200, image: UIImage(named: "p3")!)
+        
+        let c7 = Product(name: "Cheeseburger.7", price: 300, image: UIImage(named: "p3")!)
+        let c8 = Product(name: "Cheeseburger.8", price: 300, image: UIImage(named: "p3")!)
+        let c9 = Product(name: "Cheeseburger.9", price: 300, image: UIImage(named: "p3")!)
+        
+        let cheeseburgerGroupIn1 = Group(groups: nil, name: "Cheeseburger Bronze", products: [c1, c2, c3], image: UIImage(named: "p3")!)
+        let cheeseburgerGroupIn2 = Group(groups: nil, name: "Cheeseburger Silver", products: [c4, c5, c6], image: UIImage(named: "p3")!)
+        let cheeseburgerGroupIn3 = Group(groups: nil, name: "Cheeseburger Gold", products: [c7, c8, c9], image: UIImage(named: "p3")!)
+        
+        
+        let cheeseburgerGroup = Group(groups: [cheeseburgerGroupIn1, cheeseburgerGroupIn2, cheeseburgerGroupIn3], name: "BURGER", products: nil, image: UIImage(named: "p3")!)
+        
+        groups.append(pizzaGroup)
+        groups.append(burgerGroup)
+        groups.append(cheeseburgerGroup)
+        
+        
     }
 }
 

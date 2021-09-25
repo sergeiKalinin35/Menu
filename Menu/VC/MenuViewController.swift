@@ -11,12 +11,14 @@ class MenuViewController: UIViewController {
 
     
     @IBOutlet var collectionView: UICollectionView!
-    
-    
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     
-    var menu = Menu()
-    var selectedGroupIndex = 0
+  
+    
+    
+    var group: Group!
+    var selectedGroup: Group?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +32,15 @@ class MenuViewController: UIViewController {
         self.groupsCollectionView.dataSource = self
         self.groupsCollectionView.delegate = self
         
+        if let groups = group.groups, groups.count > 0 {
+            selectedGroup = groups.first!
+         } else {
+            
+            selectedGroup = group
+            
+        }
+        
     }
-    
-
-    
-
 }
 
 // MARK: - DataSource, Delegate
@@ -44,11 +50,21 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         // ставим условие
         if collectionView == groupsCollectionView {
-            return menu.groups.count
+           if let groups = group.groups {
+                return groups.count
+            } else {
+                
+                return 0
+            }
         } else {
             
-            let group = menu.groups[selectedGroupIndex]
-            return group.products.count
+            if  let products = selectedGroup?.products {
+                return products.count
+                
+            } else {
+                return 0
+            }
+          
         }
         
     }
@@ -60,7 +76,7 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GroupCell", for: indexPath) as! GroupCell
             
-            let group = menu.groups[indexPath.item]
+            let group = self.group.groups![indexPath.item]
             
             cell.setupCell(group: group)
              
@@ -69,8 +85,8 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         } else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
-            let group = menu.groups[indexPath.item]
-            let product = group.products[indexPath.item]
+          
+            let product = selectedGroup!.products![indexPath.item]
             cell.setupCell(product: product)
             
             return cell
@@ -85,7 +101,7 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if collectionView == groupsCollectionView {
             
-            let groupName = menu.groups[indexPath.item].name
+            let groupName = self.group.groups![indexPath.item].name
             let width = groupName.widthOfString(usingFont: UIFont.systemFont(ofSize: 17))
             return CGSize(width: width + 20, height: collectionView.frame.height )
             
@@ -117,15 +133,11 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         if collectionView == groupsCollectionView {
             
-            self.selectedGroupIndex = indexPath.item
+            self.selectedGroup = self.group.groups![indexPath.item]
+            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
             self.collectionView.reloadData()
             
-            
         }
-        
-        
-        
-        
     }
     
 }
