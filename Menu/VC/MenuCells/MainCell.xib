@@ -10,17 +10,17 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MainCell" customModule="Menu" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="247" height="168"/>
+            <rect key="frame" x="0.0" y="0.0" width="286" height="261"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="247" height="168"/>
+                <rect key="frame" x="0.0" y="0.0" width="286" height="261"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ9-Vt-GqS">
-                        <rect key="frame" x="0.0" y="0.0" width="247" height="127.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="286" height="220.5"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxr-PM-9ls">
-                        <rect key="frame" x="0.0" y="137.5" width="247" height="20.5"/>
+                        <rect key="frame" x="0.0" y="230.5" width="286" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -37,12 +37,12 @@
                 <constraint firstItem="ZQ9-Vt-GqS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="woL-mA-ewT"/>
                 <constraint firstItem="mxr-PM-9ls" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yAT-QT-Tsy"/>
             </constraints>
-            <size key="customSize" width="247" height="168"/>
+            <size key="customSize" width="286" height="261"/>
             <connections>
                 <outlet property="imageGroup" destination="ZQ9-Vt-GqS" id="fhW-0Z-zwF"/>
                 <outlet property="nameGroup" destination="mxr-PM-9ls" id="gUI-5f-f2u"/>
             </connections>
-            <point key="canvasLocation" x="-77.536231884057983" y="-10.714285714285714"/>
+            <point key="canvasLocation" x="-49.275362318840585" y="-41.852678571428569"/>
         </collectionViewCell>
     </objects>
 </document>
