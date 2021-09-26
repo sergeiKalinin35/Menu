@@ -116,18 +116,18 @@ class Menu {
         
         let co4 = Product(name: "Coca Colla.4", price: 200, image: UIImage(named: "cola")!)
         let co5 = Product(name: "Coca Colla.5", price: 200, image: UIImage(named: "cola")!)
-        let co6 = Product(name: "Coca Colla.6", price: 200, image: UIImage(named: "p3")!)
+        let co6 = Product(name: "Coca Colla.6", price: 200, image: UIImage(named: "cola")!)
         
         let co7 = Product(name: "Coca Colla.7", price: 300, image: UIImage(named: "cola")!)
         let co8 = Product(name: "Coca Colla.8", price: 300, image: UIImage(named: "cola")!)
         let co9 = Product(name: "Coca Colla.9", price: 300, image: UIImage(named: "cola")!)
         
-        let colaGroupIn1 = Group(groups: nil, name: "Coca Colla", products: [co1, co2, co3], image: UIImage(named: "cola")!)
-        let colaGroupIn2 = Group(groups: nil, name: "Coca Colla", products: [co4, co5, co6], image: UIImage(named: "cola")!)
-        let colaGroupIn3 = Group(groups: nil, name: "Coca Colla", products: [co7, co8, co9], image: UIImage(named: "cola")!)
+        let colaGroupIn1 = Group(groups: nil, name: "Coca Colla Zero", products: [co1, co2, co3], image: UIImage(named: "cola")!)
+        let colaGroupIn2 = Group(groups: nil, name: "Coca Colla Classic", products: [co4, co5, co6], image: UIImage(named: "cola")!)
+        let colaGroupIn3 = Group(groups: nil, name: "Coca Colla Cherry", products: [co7, co8, co9], image: UIImage(named: "cola")!)
         
         
-        let colaGroup = Group(groups: [colaGroupIn1, colaGroupIn2, colaGroupIn3], name: "Coca Colla", products: nil, image: UIImage(named: "cola")!)
+        let colaGroup = Group(groups: [colaGroupIn1, colaGroupIn2, colaGroupIn3], name: "COCA COLLA", products: nil, image: UIImage(named: "cola")!)
         
         
         
