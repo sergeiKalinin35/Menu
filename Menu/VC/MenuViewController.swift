@@ -47,9 +47,23 @@ class MenuViewController: UIViewController {
             selectedGroup = group
             
         }
+    }
         
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+        if scrollView == collectionView {
+            
+            let cells = collectionView.visibleCells
+            
+            if let cell = cells.first, let indexPath = self.collectionView.indexPath(for: cell) {
+                self.selectedGroup = self.group.groups![indexPath.item]
+                self.groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+                self.groupsCollectionView.reloadData()
+            }
+        }
     }
 }
+
 
 // MARK: - DataSource, Delegate
 extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -57,23 +71,23 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // ставим условие
-        if collectionView == groupsCollectionView {
-           if let groups = group.groups {
+     //   if collectionView == groupsCollectionView {
+            if let groups = group.groups {
                 return groups.count
             } else {
                 
                 return 0
-            }
-        } else {
-            
-            if  let products = selectedGroup?.products {
-                return products.count
-                
-            } else {
-                return 0
-            }
-          
-        }
+//            }
+//        } else {
+//
+//            if  let products = selectedGroup?.products {
+//                return products.count
+//
+//            } else {
+//                return 0
+//            }
+//
+      }
         
     }
     
@@ -96,8 +110,11 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath) as! ProductCollectionViewCell
           
-            let product = selectedGroup!.products![indexPath.item]
-            cell.setupCell(product: product)
+            
+            let products = self.group.groups![indexPath.item].products!
+            
+          
+            cell.setupCell(products: products)
             
             return cell
             
@@ -149,8 +166,8 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             
             self.groupsCollectionView.reloadData()
-            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
-            self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+          //  self.collectionView.reloadData()
             
         }
     }

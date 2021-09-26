@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F448D2A92700AE03004CB5D2 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448D2A72700AE03004CB5D2 /* ProductTableViewCell.swift */; };
+		F448D2AA2700AE03004CB5D2 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F448D2A82700AE03004CB5D2 /* ProductTableViewCell.xib */; };
 		F44D1B3026FF3C18004B384D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D1B2F26FF3C18004B384D /* MainViewController.swift */; };
 		F44D1B3326FF4068004B384D /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44D1B3126FF4068004B384D /* MainCell.swift */; };
 		F44D1B3426FF4068004B384D /* MainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F44D1B3226FF4068004B384D /* MainCell.xib */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F448D2A72700AE03004CB5D2 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		F448D2A82700AE03004CB5D2 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		F44D1B2F26FF3C18004B384D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F44D1B3126FF4068004B384D /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		F44D1B3226FF4068004B384D /* MainCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainCell.xib; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				F4F2035626FE4C9B005F0887 /* GroupCell.xib */,
 				F44D1B3126FF4068004B384D /* MainCell.swift */,
 				F44D1B3226FF4068004B384D /* MainCell.xib */,
+				F448D2A72700AE03004CB5D2 /* ProductTableViewCell.swift */,
+				F448D2A82700AE03004CB5D2 /* ProductTableViewCell.xib */,
 			);
 			path = MenuCells;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 				F4F2033F26FE0B67005F0887 /* LaunchScreen.storyboard in Resources */,
 				F4F2033C26FE0B67005F0887 /* Assets.xcassets in Resources */,
 				F44D1B3426FF4068004B384D /* MainCell.xib in Resources */,
+				F448D2AA2700AE03004CB5D2 /* ProductTableViewCell.xib in Resources */,
 				F4F2034C26FE1FDB005F0887 /* ProductCollectionViewCell.xib in Resources */,
 				F4F2035826FE4C9B005F0887 /* GroupCell.xib in Resources */,
 				F4F2033A26FE0B64005F0887 /* Main.storyboard in Resources */,
@@ -206,6 +213,7 @@
 			files = (
 				F44D1B3026FF3C18004B384D /* MainViewController.swift in Sources */,
 				F4F2033326FE0B64005F0887 /* AppDelegate.swift in Sources */,
+				F448D2A92700AE03004CB5D2 /* ProductTableViewCell.swift in Sources */,
 				F4F2033526FE0B64005F0887 /* SceneDelegate.swift in Sources */,
 				F4F2034B26FE1FDB005F0887 /* ProductCollectionViewCell.swift in Sources */,
 				F4F2035726FE4C9B005F0887 /* GroupCell.swift in Sources */,
