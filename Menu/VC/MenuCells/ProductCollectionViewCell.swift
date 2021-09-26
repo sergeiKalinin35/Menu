@@ -12,6 +12,12 @@ class ProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tableView: UITableView!
     
     
+    
+    // handler обработчик переход через него
+    var fullScreenHandler:((_ cell: ProductCollectionViewCell, _ indexProduct: Int) -> Void)?
+    
+    
+    
     private var products = [Product]()
     
     
@@ -59,6 +65,24 @@ extension ProductCollectionViewCell: UITableViewDataSource, UITableViewDelegate 
         return cell
        
         }
+    
+    
+    // выбор ячейки для перехода
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // снятие цвета с ячейки выбранной
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        fullScreenHandler?(self, indexPath.row)
+        
+        
+    }
+    
+    
+    
+    
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension

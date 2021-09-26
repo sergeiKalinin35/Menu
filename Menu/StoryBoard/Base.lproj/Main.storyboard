@@ -73,6 +73,43 @@
             </objects>
             <point key="canvasLocation" x="1037.68115942029" y="117.85714285714285"/>
         </scene>
+        <!--Full Product View Controller-->
+        <scene sceneID="siU-oy-PjU">
+            <objects>
+                <viewController storyboardIdentifier="FullProductViewController" id="Uim-Yg-lmW" customClass="FullProductViewController" customModule="Menu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GOy-EW-9F5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yq4-8S-BSZ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aoD-hC-22m">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XcN-MA-JGg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yq4-8S-BSZ" firstAttribute="leading" secondItem="XcN-MA-JGg" secondAttribute="leading" id="B5u-e0-2mo"/>
+                            <constraint firstItem="yq4-8S-BSZ" firstAttribute="top" secondItem="XcN-MA-JGg" secondAttribute="top" id="Gwx-6m-opW"/>
+                            <constraint firstItem="XcN-MA-JGg" firstAttribute="trailing" secondItem="yq4-8S-BSZ" secondAttribute="trailing" id="k7W-k8-qSD"/>
+                            <constraint firstItem="XcN-MA-JGg" firstAttribute="bottom" secondItem="yq4-8S-BSZ" secondAttribute="bottom" id="rTN-hb-WW9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="yq4-8S-BSZ" id="HEm-MU-JHu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jj-WH-MSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1945" y="118"/>
+        </scene>
         <!--Products-->
         <scene sceneID="jgh-h4-GMD">
             <objects>

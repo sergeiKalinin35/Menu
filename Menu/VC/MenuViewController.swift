@@ -113,6 +113,7 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let products = self.group.groups![indexPath.item].products!
             
+            cell.fullScreenHandler = fullScreenHandler2
           
             cell.setupCell(products: products)
             
@@ -121,10 +122,19 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
+    //MARK: - ???
     
+    public override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape,
+           let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.invalidateLayout()
+        } else if UIDevice.current.orientation.isPortrait,
+                  let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                   layout.invalidateLayout()
+          }
+  }
     
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == groupsCollectionView {
             
@@ -175,5 +185,26 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 
+// ПЕРЕХОД на FullProductViewController
 
+extension MenuViewController {
+    
+    func fullScreenHandler2(cell: ProductCollectionViewCell, indexProduct: Int) {
+        
+        if let indexPath = self.collectionView.indexPath(for: cell) {
+        let products = self.group.groups![indexPath.item].products!
+            
+            // взяли продукты и делаем новый переход на экран FullProductViewController
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(identifier: "FullProductViewController") as! FullProductViewController
+            
+            
+            vc.products = products
+            vc.indexPath = IndexPath(row: indexProduct, section: 0)
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
 
