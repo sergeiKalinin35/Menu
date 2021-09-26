@@ -17,7 +17,15 @@ class MenuViewController: UIViewController {
     
     
     var group: Group!
-    var selectedGroup: Group?
+    var selectedGroup: Group? {
+        didSet {
+            if let groupS = self.selectedGroup {
+                
+                self.title = groupS.name
+                
+            }
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -78,7 +86,9 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let group = self.group.groups![indexPath.item]
             
-            cell.setupCell(group: group)
+            let isSelected = group.name == selectedGroup!.name
+            
+            cell.setupCell(group: group, isSelected: isSelected)
              
             return cell
             
@@ -134,6 +144,11 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == groupsCollectionView {
             
             self.selectedGroup = self.group.groups![indexPath.item]
+            //выравниваем скролл сверху группа
+            self.groupsCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            
+            
+            self.groupsCollectionView.reloadData()
             self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
             self.collectionView.reloadData()
             
