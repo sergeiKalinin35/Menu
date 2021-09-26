@@ -31,7 +31,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        menu.groups.count
+       return  menu.groups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

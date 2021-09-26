@@ -104,7 +104,7 @@ class Menu {
         let cheeseburgerGroupIn3 = Group(groups: nil, name: "Cheeseburger Gold", products: [c7, c8, c9], image: UIImage(named: "p3")!)
         
         
-        let cheeseburgerGroup = Group(groups: [cheeseburgerGroupIn1, cheeseburgerGroupIn2, cheeseburgerGroupIn3], name: "BURGER", products: nil, image: UIImage(named: "p3")!)
+        let cheeseburgerGroup = Group(groups: [cheeseburgerGroupIn1, cheeseburgerGroupIn2, cheeseburgerGroupIn3], name: "CHEESEBURGER", products: nil, image: UIImage(named: "p3")!)
         
         groups.append(pizzaGroup)
         groups.append(burgerGroup)
