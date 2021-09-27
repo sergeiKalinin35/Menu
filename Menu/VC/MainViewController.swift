@@ -17,6 +17,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
+        
+        
         self.collectionView.register(UINib(nibName: "MainCell", bundle: nil), forCellWithReuseIdentifier: "MainCell")
 
         self.collectionView.dataSource = self
@@ -48,7 +51,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     // размер ячейки 2 ячейки в строку в коллектион вью
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 2, height: 120)
+        return CGSize(width: collectionView.frame.width / 2, height: 160)
     }
     
     

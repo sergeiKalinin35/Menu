@@ -40,22 +40,27 @@ class Menu {
         
 //MARK: - Pizza
         
+     
         
-        let p1 = Product(name: "Pizza.1", price: 300, image: UIImage(named: "p1")!)
-        let p2 = Product(name: "Pizza.2", price: 300, image: UIImage(named: "p1")!)
-        let p3 = Product(name: "Pizza.3", price: 300, image: UIImage(named: "p1")!)
         
-        let p4 = Product(name: "Pizza.4", price: 400, image: UIImage(named: "p1")!)
-        let p5 = Product(name: "Pizza.5", price: 400, image: UIImage(named: "p1")!)
-        let p6 = Product(name: "Pizza.6", price: 400, image: UIImage(named: "p1")!)
+        let p1 = Product(name: "Боча", price: 300, image: UIImage(named: "Боча")!)
+        let p2 = Product(name: "U.S.A", price: 300, image: UIImage(named: "U.S.A.")!)
+        let p3 = Product(name: "Четыре Сыра", price: 300, image: UIImage(named: "Четыре Сыра")!)
         
-        let p7 = Product(name: "Pizza.7", price: 500, image: UIImage(named: "p1")!)
-        let p8 = Product(name: "Pizza.8", price: 500, image: UIImage(named: "p1")!)
-        let p9 = Product(name: "Pizza.9", price: 500, image: UIImage(named: "p1")!)
+        let p4 = Product(name: "Прованс", price: 400, image: UIImage(named: "Прованс")!)
+        let p5 = Product(name: "Мексика", price: 400, image: UIImage(named: "Мексика")!)
+        let p6 = Product(name: "Итальяно", price: 400, image: UIImage(named: "Итальяно")!)
         
-        let pizzaGroupIn1 = Group(groups: nil, name: "Pizza 25cm", products: [p1, p2, p3, p1, p2, p3, p1, p2, p3,], image: UIImage(named: "p1")!)
-        let pizzaGroupIn2 = Group(groups: nil, name: "Pizza 30cm", products: [p4, p5, p6], image: UIImage(named: "p1")!)
-        let pizzaGroupIn3 = Group(groups: nil, name: "Pizza 35cm", products: [p7, p8, p9], image: UIImage(named: "p1")!)
+        let p7 = Product(name: "Граф", price: 500, image: UIImage(named: "Граф")!)
+        let p8 = Product(name: "Маргарита", price: 500, image: UIImage(named: "Маргарита")!)
+        let p9 = Product(name: "Веган", price: 500, image: UIImage(named: "Веган")!)
+        
+    
+        
+        
+        let pizzaGroupIn1 = Group(groups: nil, name: "Pizza 'S 30cm", products: [p1, p2, p3], image: UIImage(named: "p1")!)
+        let pizzaGroupIn2 = Group(groups: nil, name: "Pizza 'M 40cm", products: [ p4, p5, p6], image: UIImage(named: "p1")!)
+        let pizzaGroupIn3 = Group(groups: nil, name: "Pizza 'L 50cm", products:[ p7, p8, p9], image: UIImage(named: "p1")!)
         
         
         let pizzaGroup = Group(groups: [pizzaGroupIn1, pizzaGroupIn2, pizzaGroupIn3], name: "PIZZA", products: nil, image: UIImage(named: "p1")!)

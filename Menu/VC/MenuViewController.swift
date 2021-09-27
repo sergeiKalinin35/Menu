@@ -13,6 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     
+    
   
     
     
@@ -30,6 +31,14 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
+        
+        
+       collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
+        groupsCollectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
+        
+        
 
         self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         self.collectionView.dataSource = self
@@ -62,6 +71,15 @@ class MenuViewController: UIViewController {
             }
         }
     }
+    
+  
+
+    
+    
+    
+    
+    
+    
 }
 
 
@@ -145,7 +163,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
             
             } else {
             
-            return CGSize(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 400)
+            return CGSize(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.height - 300)
         }
         
         
@@ -158,7 +176,7 @@ func collectionView(_ collectionView: UICollectionView, layout collectionViewLay
     
     // вверхняя коллекция вью
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

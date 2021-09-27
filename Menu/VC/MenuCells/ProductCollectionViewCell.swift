@@ -11,7 +11,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
+   
     
     // handler обработчик переход через него
     var fullScreenHandler:((_ cell: ProductCollectionViewCell, _ indexProduct: Int) -> Void)?
@@ -21,8 +21,14 @@ class ProductCollectionViewCell: UICollectionViewCell {
     private var products = [Product]()
     
     
+   
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
+       
+        
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
@@ -30,7 +36,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         // регистрируем ячейку
         self.tableView.register(UINib(nibName: "ProductTableViewCell", bundle: nil), forCellReuseIdentifier: "ProductTableViewCell")
         
-        
+       
     }
    
     
@@ -38,12 +44,15 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        
+        
      
     }
     
     
     func setupCell(products: [Product]) {
         self.products = products
+      
         self.tableView.reloadData()
         
     }

@@ -19,7 +19,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Vp7-Sq-2oB">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="R64-Qw-CGb">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -82,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yq4-8S-BSZ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aoD-hC-22m">
                                     <size key="itemSize" width="128" height="128"/>
@@ -97,9 +97,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="yq4-8S-BSZ" firstAttribute="leading" secondItem="XcN-MA-JGg" secondAttribute="leading" id="B5u-e0-2mo"/>
-                            <constraint firstItem="yq4-8S-BSZ" firstAttribute="top" secondItem="XcN-MA-JGg" secondAttribute="top" id="Gwx-6m-opW"/>
+                            <constraint firstItem="yq4-8S-BSZ" firstAttribute="top" secondItem="GOy-EW-9F5" secondAttribute="top" id="Gwx-6m-opW"/>
                             <constraint firstItem="XcN-MA-JGg" firstAttribute="trailing" secondItem="yq4-8S-BSZ" secondAttribute="trailing" id="k7W-k8-qSD"/>
-                            <constraint firstItem="XcN-MA-JGg" firstAttribute="bottom" secondItem="yq4-8S-BSZ" secondAttribute="bottom" id="rTN-hb-WW9"/>
+                            <constraint firstAttribute="bottom" secondItem="yq4-8S-BSZ" secondAttribute="bottom" id="rTN-hb-WW9"/>
                         </constraints>
                     </view>
                     <connections>
@@ -108,9 +108,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jj-WH-MSn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="118"/>
+            <point key="canvasLocation" x="1944.9275362318842" y="117.85714285714285"/>
         </scene>
-        <!--Products-->
+        <!--Products :-->
         <scene sceneID="jgh-h4-GMD">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="Rhr-D5-Z4J" customClass="MainViewController" customModule="Menu" customModuleProvider="target" sceneMemberID="viewController">
@@ -139,7 +139,9 @@
                             <constraint firstItem="dwa-5h-chW" firstAttribute="trailing" secondItem="6Sj-fM-h7y" secondAttribute="trailing" id="wWn-XQ-Iv5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" id="BVm-xI-GiV"/>
+                    <navigationItem key="navigationItem" title="Products :" id="BVm-xI-GiV">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="TYN-Xd-dXs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="6Sj-fM-h7y" id="xAF-dY-TFb"/>
                     </connections>
@@ -153,12 +155,20 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VcS-Mx-mah" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9ir-nr-BBY">
+                    <navigationBar key="navigationBar" contentMode="top" largeTitles="YES" id="9ir-nr-BBY">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="-1" vertical="-1"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

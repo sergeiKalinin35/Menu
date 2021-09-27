@@ -10,6 +10,10 @@ import UIKit
 class ProductTableViewCell: UITableViewCell {
     
     
+    
+  
+    
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
@@ -19,7 +23,7 @@ class ProductTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+      
         
     }
 

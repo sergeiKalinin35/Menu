@@ -22,6 +22,8 @@ class FullProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
+        
         // регистрация ячейки
         self.collectionView.register(UINib(nibName: "FullProductCell", bundle: nil), forCellWithReuseIdentifier: "FullProductCell")
         
@@ -33,7 +35,10 @@ class FullProductViewController: UIViewController {
         
         self.collectionView.performBatchUpdates(nil) { (_) in
             self.collectionView.scrollToItem(at: self.indexPath, at: .centeredHorizontally, animated: false)
+            
+          
         }
+       
     }
 }
 

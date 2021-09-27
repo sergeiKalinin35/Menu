@@ -20,10 +20,13 @@
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MDi-Z8-Eg1">
                         <rect key="frame" x="0.0" y="0.0" width="459" height="468"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="separatorColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                     </tableView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" red="0.1883192658" green="0.1843054891" blue="0.1882311106" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="MDi-Z8-Eg1" secondAttribute="trailing" id="Buw-KJ-Gfi"/>
                 <constraint firstAttribute="bottom" secondItem="MDi-Z8-Eg1" secondAttribute="bottom" id="MzB-zj-M43"/>
@@ -34,7 +37,7 @@
             <connections>
                 <outlet property="tableView" destination="MDi-Z8-Eg1" id="Nge-GO-XXQ"/>
             </connections>
-            <point key="canvasLocation" x="795" y="-29"/>
+            <point key="canvasLocation" x="794.92753623188412" y="-29.464285714285712"/>
         </collectionViewCell>
     </objects>
     <resources>
