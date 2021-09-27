@@ -58,7 +58,7 @@ class Menu {
     
         
         
-        let pizzaGroupIn1 = Group(groups: nil, name: "Pizza 'S 30cm", products: [p1, p2, p3], image: UIImage(named: "p1")!)
+        let pizzaGroupIn1 = Group(groups: nil, name: "Pizza 'S 30cm", products: [p1, p2, p3, p4, p5], image: UIImage(named: "p1")!)
         let pizzaGroupIn2 = Group(groups: nil, name: "Pizza 'M 40cm", products: [ p4, p5, p6], image: UIImage(named: "p1")!)
         let pizzaGroupIn3 = Group(groups: nil, name: "Pizza 'L 50cm", products:[ p7, p8, p9], image: UIImage(named: "p1")!)
         

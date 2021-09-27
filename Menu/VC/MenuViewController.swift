@@ -13,10 +13,6 @@ class MenuViewController: UIViewController {
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet weak var groupsCollectionView: UICollectionView!
     
-    
-  
-    
-    
     var group: Group!
     var selectedGroup: Group? {
         didSet {
@@ -32,20 +28,14 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
+      self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         
-        
-       collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
-        groupsCollectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
-        
-        
-
-        self.collectionView.register(UINib(nibName: "ProductCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ProductCollectionViewCell")
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
       
         
         self.groupsCollectionView.register(UINib(nibName: "GroupCell", bundle: nil), forCellWithReuseIdentifier: "GroupCell")
+        
         self.groupsCollectionView.dataSource = self
         self.groupsCollectionView.delegate = self
         
@@ -71,15 +61,6 @@ class MenuViewController: UIViewController {
             }
         }
     }
-    
-  
-
-    
-    
-    
-    
-    
-    
 }
 
 
@@ -88,24 +69,12 @@ extension MenuViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        // ставим условие
-     //   if collectionView == groupsCollectionView {
-            if let groups = group.groups {
+        if let groups = group.groups {
                 return groups.count
             } else {
+            return 0
                 
-                return 0
-//            }
-//        } else {
-//
-//            if  let products = selectedGroup?.products {
-//                return products.count
-//
-//            } else {
-//                return 0
-//            }
-//
-      }
+            }
         
     }
     

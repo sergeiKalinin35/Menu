@@ -29,7 +29,7 @@ class GroupCell: UICollectionViewCell {
         
         if isSelected {
             
-            self.contentView.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
+            self.contentView.backgroundColor = #colorLiteral(red: 0.3516668081, green: 0.5583085418, blue: 0.5745483041, alpha: 1)
             
         } else {
             

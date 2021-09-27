@@ -22,7 +22,7 @@ class FullProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "dark-grunge-texture"))
+      
         
         // регистрация ячейки
         self.collectionView.register(UINib(nibName: "FullProductCell", bundle: nil), forCellWithReuseIdentifier: "FullProductCell")
